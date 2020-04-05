@@ -1,0 +1,8 @@
+<div class="mx-md-5 mt-5 p-3 shadow rounded" >
+    <h3 class="text-center">History</h3>
+    <div class="custom-control custom-checkbox">
+      <input class="custom-control-input" type="checkbox" id="logarithmicCheckbox" {{on 'change' (fn this.changeAxisScale)}}>
+      <label class="custom-control-label" for="logarithmicCheckbox">Logarithmic scale</label>
+    </div>
+    <canvas {{did-insert this.createHistoricalGraph}} />
+</div>

@@ -1,6 +1,11 @@
-<h1 class="text-center mb-sm-5">Corona statistics</h1>
+<h1 class="text-center mb-sm-5">COVID-19 statistics</h1>
 
 <GlobalStatistics @globalData={{@model.globalCases}}/>
 
+<HistoricalGraph @timeline={{@model.timeline}}/>
+
+<GlobalPieCharts @countries={{@model.countries}}/>
+
 <CountriesList @countries={{@model.countries}} />
+
 {{outlet}}

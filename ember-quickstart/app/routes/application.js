@@ -7,7 +7,11 @@ export default class ApplicationRoute extends Route {
     model.globalCases = await content.json();
     content = await fetch('http://api.coronastatistics.live/countries');
     model.countries = await content.json();
-    model.globalCases.critical = model.countries.reduce((a, b) => a + (b.critical || 0), 0);
+    model.globalCases.critical = model.countries.reduce((a, b) => a + b.critical, 0);
+
+    content = await fetch('http://api.coronastatistics.live/timeline');
+    model.timeline = await content.json();
+
     return model;
   }
 }
