@@ -1,5 +1,6 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-<WelcomePage />
-{{!-- Feel free to remove this! --}}
+<h1 class="text-center mb-sm-5">Corona statistics</h1>
 
+<GlobalStatistics @globalData={{@model.globalCases}}/>
+
+<CountriesList @countries={{@model.countries}} />
 {{outlet}}
