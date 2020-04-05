@@ -18,6 +18,7 @@ export default class CountriesListComponent extends Component {
 
   orderByField(orderBy) {
     const countries = this.args.countries;
+
     if (orderBy === "country")
       countries.sort((a, b) => a.country.localeCompare(b.country));
     else
