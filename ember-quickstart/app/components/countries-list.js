@@ -6,7 +6,7 @@ export default class CountriesListComponent extends Component {
   @tracked listToDisplay;
   @tracked pagesToDisplay;
   pagesToDisplayCount = 10;
-  itemsPerPage = 10;
+  itemsPerPage = 20;
   pageSelected = 1;
   orderBy;
   pages;
