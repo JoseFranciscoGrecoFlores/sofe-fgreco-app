@@ -2,7 +2,7 @@
 A web app for displaying global COVID-19 statistics for the Nearsoft Student of Excellence contest 
 
 # Install
-There are no special installation steps required, just run `ember serve` on the ember-quickstart folder
+There are no special installation steps required, just run `npm install` and then `ember serve` on the ember-quickstart folder
 
 # Libraries used
 Amcharts is used to display the world map and its cases/deaths/recovered/critical, for all the other charts Chart.js is used, this is due to the fact that amcharts pricing varies depending on the use case whereas Chart.js is MIT licensed, so to future proof the project Chart.js is prefered.
