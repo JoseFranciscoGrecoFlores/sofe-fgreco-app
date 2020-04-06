@@ -52,7 +52,7 @@
     </table>
   </div>
   <nav aria-label="Country navigation">
-    <ul class="pagination justify-content-center">
+    <ul class="pagination justify-content-center flex-wrap">
       {{#each this.pagesToDisplay as |page|}}
       <li class="{{if page.active "active"}} page-item">
         <button class="page-link" {{action "onPageSelected" page.value}}>{{page.value}}</button>
