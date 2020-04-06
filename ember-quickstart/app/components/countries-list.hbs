@@ -3,7 +3,7 @@
   <div class="form-group row align-items-center">
     <label class="col-auto col-form-label" for="Order by">Order by:</label>
     <div class="col-auto">
-      <select id="Order by" name="Order by" class="custom-select" {{on 'change' (fn this.orderBy)}}>
+      <select id="Order by" name="Order by" class="custom-select" {{on 'change' (fn this.onChangedOrderCriteria)}}>
         <option value="country">Country name</option>
         <option value="cases">Cases</option>
         <option value="todayCases">Today cases</option>
@@ -17,7 +17,7 @@
       </select>
     </div>
   </div>
-  <div class="table-responsive-sm">
+  <div class="table-responsive">
     <table class="table table-striped table-hover">
       <thead class="thead-dark">
         <tr>
@@ -34,7 +34,7 @@
         </tr>
       </thead>
       <tbody>
-        {{#each this.sortedList as |country|}}
+        {{#each this.listToDisplay as |country|}}
         <tr>
           <td>{{country.country}}</td>
           <td>{{country.cases}}</td>
@@ -51,4 +51,13 @@
       </tbody>
     </table>
   </div>
+  <nav aria-label="Country navigation">
+    <ul class="pagination justify-content-center">
+      {{#each this.pagesToDisplay as |page|}}
+      <li class="{{if page.active "active"}} page-item">
+        <button class="page-link" {{action "onPageSelected" page.value}}>{{page.value}}</button>
+      </li>
+      {{/each}}
+    </ul>
+  </nav>
 </div>
