@@ -2,7 +2,6 @@ import Component from '@glimmer/component';
 import { action } from '@ember/object';
 import Chart from 'chart.js/dist/Chart.js';
 
-//TODO: Add others 
 export default class GlobalPieChartsComponent extends Component {
   @action
   onDeathChartCreated(element) {
@@ -56,10 +55,15 @@ export default class GlobalPieChartsComponent extends Component {
     const countries = this.args.countries;
     countries.sort((a, b) => b[attributeName] - a[attributeName]);
 
-    this.displayChartForData(element,
-      countries.slice(0, 10).map(x => x.country),
-      countries.slice(0, 10).map(x => x[attributeName]),
-      backgroundColors);;
+    const labels = countries.slice(0, 9).map(x => x.country);
+    labels.push("Other");
+
+    const numbers = countries.slice(0, 9).map(x => x[attributeName]);
+    const otherCountries = countries.slice(9, countries.length);
+
+    numbers.push(otherCountries.reduce((a, b) => a + b[attributeName], 0));
+
+    this.displayChartForData(element, labels, numbers, backgroundColors);;
   }
 
   displayChartForData(element, labels, data, backgroundColors) {
