@@ -8,12 +8,12 @@ There are no special installation steps required, just run `ember serve` on the 
 Amcharts is used to display the world map and its cases/deaths/recovered/critical, for all the other charts Chart.js is used, this is due to the fact that amcharts pricing varies depending on the use case whereas Chart.js is MIT licensed, so to future proof the project Chart.js is prefered.
 
 # Project structure
-There are 5 ember components that make up the page:
-countries-list A table that displays each country data 
-global-pie-charts 3 pie charts displaying the top countries for each category
-global-statistics Displays the global cases/deaths/recovered/critical
-historical-graph A graph that displays the cases/deaths/recovered per day
-world-map A world heat map displaying data per country
+There are 5 ember components that make up the page:  
+countries-list A table that displays each country data   
+global-pie-charts 3 pie charts displaying the top countries for each category   
+global-statistics Displays the global cases/deaths/recovered/critical  
+historical-graph A graph that displays the cases/deaths/recovered per day  
+world-map A world heat map displaying data per country  
 
 # Tests
 As I had never used Ember.js before it would have been counterproductive for me to develop in a TDD fashion, so currently there are no tests in place.
