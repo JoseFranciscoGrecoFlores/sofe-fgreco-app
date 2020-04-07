@@ -16,7 +16,7 @@ historical-graph A graph that displays the cases/deaths/recovered per day
 world-map A world heat map displaying data per country  
 
 # Tests
-As I had never used Ember.js before it would have been counterproductive for me to develop in a TDD fashion, so currently there are no tests in place.
+Run `ember test` on the ember-quickstart folder
 
 # Build
 Just run `ember build --environment=production`
